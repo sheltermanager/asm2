@@ -697,7 +697,7 @@ public abstract class DBConnection {
 
         // Find the first query in the file data
         int be = 0;
-        int en = s.indexOf(";");
+        int en = s.indexOf(";\n");
 
         // If we have a byte order marker, skip to the next char
         // (because java signs all bytes, then < 0 means we're really 
@@ -711,7 +711,14 @@ public abstract class DBConnection {
         while (true) {
             String sql = s.substring(be, en).trim();
             Global.logDebug("FileQuery: " + sql, "DBConnection.executeBatchFile");
-            executeAction(c, sql);
+
+            try {
+                executeAction(c, sql);
+            }
+            catch (Exception e) {
+                // Log and skip errors
+                Global.logException(e, DBConnection.class);
+            }
 
             be = en + 1;
             en = s.indexOf(";\n", be);
