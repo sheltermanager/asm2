@@ -714,7 +714,7 @@ public abstract class DBConnection {
             executeAction(c, sql);
 
             be = en + 1;
-            en = s.indexOf(";", be);
+            en = s.indexOf(";\n", be);
 
             if (en == -1) {
                 break;

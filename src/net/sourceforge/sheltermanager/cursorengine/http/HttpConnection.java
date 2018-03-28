@@ -18,6 +18,7 @@ import java.sql.Savepoint;
 import java.sql.Statement;
 import java.sql.Struct;
 
+import java.util.concurrent.Executor; // java7
 import java.util.Map;
 import java.util.Properties;
 
@@ -29,6 +30,11 @@ public class HttpConnection implements Connection {
     public HttpConnection(String url) {
         this.url = url.substring(url.indexOf("http"));
         closed = false;
+    }
+
+    @Override
+    public void abort(Executor executor) {
+        // java7
     }
 
     @Override
@@ -136,6 +142,17 @@ public class HttpConnection implements Connection {
     @Override
     public DatabaseMetaData getMetaData() throws SQLException {
         return new HttpMetaData(url, this);
+    }
+
+    @Override
+    public int getNetworkTimeout() throws SQLException {
+        return 0; // java7: 0 = no limit
+    }
+
+    @Override
+    public String getSchema() {
+        // java7
+        return "";
     }
 
     @Override
@@ -286,8 +303,18 @@ public class HttpConnection implements Connection {
     }
 
     @Override
+    public void setNetworkTimeout(Executor executor, int mmilliseconds) throws SQLException {
+        // java7
+    }
+
+    @Override
     public void setReadOnly(boolean readOnly) throws SQLException {
         // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void setSchema(String schema) {
+        // java7
     }
 
     @Override
@@ -390,6 +417,11 @@ class HttpMetaData implements DatabaseMetaData {
     public boolean doesMaxRowSizeIncludeBlobs() throws SQLException {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    @Override
+    public boolean generatedKeyAlwaysReturned() throws SQLException {
+        return true; // java7
     }
 
     @Override
@@ -732,6 +764,11 @@ class HttpMetaData implements DatabaseMetaData {
     public String getProcedureTerm() throws SQLException {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public ResultSet getPseudoColumns(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) throws SQLException {
+        return null; //java7
     }
 
     @Override

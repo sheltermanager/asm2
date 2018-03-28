@@ -1,3 +1,10 @@
+2.8.15
+================
+
+*. Enable "Run Database Update" without the need for debug mode
+*. Use ;\n as the end marker for queries when reading from a file
+*. Upgraded to Java 8
+
 2.8.14
 ================
 

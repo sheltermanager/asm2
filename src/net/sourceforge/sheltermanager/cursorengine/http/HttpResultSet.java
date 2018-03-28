@@ -528,6 +528,17 @@ public class HttpResultSet implements ResultSet {
     }
 
     @Override
+    public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+        return null; // java7
+    }
+
+    @Override
+    public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+        return null; // java7
+    }
+
+
+    @Override
     public Ref getRef(int arg0) throws SQLException {
         // TODO Auto-generated method stub
         return null;

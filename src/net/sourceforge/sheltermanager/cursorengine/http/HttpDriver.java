@@ -7,6 +7,7 @@ import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 
 public class HttpDriver implements Driver {
@@ -48,6 +49,11 @@ public class HttpDriver implements Driver {
     @Override
     public int getMinorVersion() {
         return 0;
+    }
+
+    @Override
+    public Logger getParentLogger() {
+        return null; // java7
     }
 
     @Override

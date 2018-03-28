@@ -74,6 +74,11 @@ public class HttpStatement implements Statement {
     }
 
     @Override
+    public void closeOnCompletion() throws SQLException{
+        // java7
+    }
+
+    @Override
     public boolean execute(String sql) throws SQLException {
         return executeUpdate(sql) > 0;
     }
@@ -308,6 +313,11 @@ public class HttpStatement implements Statement {
     public boolean isClosed() throws SQLException {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        return false; // java7
     }
 
     @Override
