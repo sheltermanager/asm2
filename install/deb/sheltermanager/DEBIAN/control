@@ -1,12 +1,12 @@
 Package: sheltermanager
-Version: 2.8.15
+Version: 2.8.16
 Section: contrib
 Priority: optional
 Architecture: all
 Essential: no
 Depends: menu, openjdk-6-jre
 Suggests: openoffice.org-writer
-Installed-Size: 7672
+Installed-Size: 7708
 Maintainer: Robin Rawson-Tetley [robin@rawsontetley.org]
 Provides: sheltermanager
 Description: Management solution for animal shelters and sanctuaries

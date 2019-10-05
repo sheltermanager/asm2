@@ -36,8 +36,8 @@
 		       deprecation="on"
 		       nowarn="on"
 		       debug="on"
-		       source="5"
-		       target="5"
+		       source="6"
+		       target="6"
                        includeAntRuntime="false"
 		       verbose="off">
                        <compilerarg value="-Xlint:unchecked"/>

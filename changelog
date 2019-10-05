@@ -1,3 +1,9 @@
+2.8.16
+================
+
+*. Fix PetFinder to use new format and no longer send import.cfg
+*. Remove Pets911 as they are long gone
+
 2.8.15
 ================
 

@@ -1513,10 +1513,10 @@ public class Main extends ASMWindow {
             mnuInternetSaveAPet.add(UI.getSeparator());
             mnuInternetSaveAPet.add(mnuInternetSaveAPetSettings);
             mnuInternet.add(mnuInternetSaveAPet);
-            mnuInternetPets911.add(mnuInternetPets911Publish);
-            mnuInternetPets911.add(UI.getSeparator());
-            mnuInternetPets911.add(mnuInternetPets911Settings);
-            mnuInternet.add(mnuInternetPets911);
+            //mnuInternetPets911.add(mnuInternetPets911Publish);
+            //mnuInternetPets911.add(UI.getSeparator());
+            //mnuInternetPets911.add(mnuInternetPets911Settings);
+            //mnuInternet.add(mnuInternetPets911);
             mnuInternetSmartTag.add(mnuInternetSmartTagPublish);
             mnuInternetSmartTag.add(UI.getSeparator());
             mnuInternetSmartTag.add(mnuInternetSmartTagSettings);
